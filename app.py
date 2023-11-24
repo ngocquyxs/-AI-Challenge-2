@@ -15,11 +15,11 @@ btc_scaler = MinMaxScaler()
 eth_scaler = MinMaxScaler()
 
 # Load BTC training data 
-btc_data = pd.read_csv('btc_training_data.csv')  # Change to your actual BTC training data file
+btc_data = pd.read_csv('btc_training_data.csv')  
 btc_scaler.fit(btc_data[['Close']].values.reshape(-1, 1))
 
 # Load ETH training data 
-eth_data = pd.read_csv('eth_training_data.csv')  # Change to your actual BNB training data file
+eth_data = pd.read_csv('eth_training_data.csv')  
 eth_scaler.fit(eth_data[['Close']].values.reshape(-1, 1))
 
 def get_prediction_data(model, scaler, training_data, days_to_predict):
